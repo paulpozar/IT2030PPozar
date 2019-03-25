@@ -30,5 +30,8 @@ namespace EnrollmentApplication.Models
         [Required]
         [Range(2018, 9999)]
         public virtual int EnrollmentYear { get; set; }
+
+        [InvalidChars("*#^")]
+        public virtual string Notes { get; set; }
     }
 }
