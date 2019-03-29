@@ -1,0 +1,11 @@
+﻿﻿@model IEnumerable<EnrollmentApplication.Models.Course>
+<div id="coursesearch">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>Title: @item.Title</li>
+            <li>Description: @item.Description</li>
+            <li>Credits: @item.Credits</li>
+        }
+    </ul>
+</div>

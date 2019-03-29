@@ -14,6 +14,18 @@ namespace EnrollmentApplication.Controllers
     {
         private EnrollmentDBContext db = new EnrollmentDBContext();
 
+        public ActionResult StudentoftheMonth()
+        {
+            var student = GetStudentoftheMonth();
+            return PartialView("_StudentoftheMonth", student);
+        }
+
+        private object GetStudentoftheMonth()
+        {
+            var student = db.Students.OrderBy(a => System.Guid.NewGuid()).First();
+            return student;
+        }
+
         // GET: Student
         public ActionResult Index()
         {
